@@ -1,0 +1,30 @@
+---
+# Description: Create an CLI template
+# Modules Used: template_workflow_manager.py
+# Dependencies: None
+# Tags: Create an CLI template, Create a template
+
+
+- name: Create the CLI template
+  cisco.dnac.template_workflow_manager:
+    dnac_host: "{{dnac_host}}"
+    dnac_username: "{{dnac_username}}"
+    dnac_password: "{{dnac_password}}"
+    dnac_verify: "{{dnac_verify}}"
+    dnac_port: "{{dnac_port}}"
+    dnac_version: "{{dnac_version}}"
+    dnac_debug: "{{dnac_debug}}"
+    dnac_log_level: "{{dnac_log_level}}"
+    dnac_log: "{{dnac_log}}"
+    state: merged
+    config:
+    - configuration_templates:
+        author: string
+        description: string
+        device_types:
+        - product_family: string
+        language: string
+        name: string
+        project_name: string
+        software_type: string
+        template_content: string

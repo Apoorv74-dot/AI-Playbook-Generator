@@ -1,0 +1,29 @@
+---
+# Description: Create a new Floor site
+# Modules Used: site_workflow_manager.py
+# Dependencies: Create site
+# Tags: Create Floor, Floor, New Floor, Create Floor under Building
+
+- name: Create a new floor site
+  cisco.dnac.site_workflow_manager:
+    dnac_host: "{{dnac_host}}"
+    dnac_username: "{{dnac_username}}"
+    dnac_password: "{{dnac_password}}"
+    dnac_verify: "{{dnac_verify}}"
+    dnac_port: "{{dnac_port}}"
+    dnac_version: "{{dnac_version}}"
+    dnac_debug: "{{dnac_debug}}"
+    dnac_log_level: "{{dnac_log_level}}"
+    dnac_log: "{{dnac_log}}"
+    state: merged
+    config:
+    - site:
+        floor:
+          name: Floor_1
+          parent_name: Global/India/Building_1
+          length: 75.76
+          width: 35.54
+          height: 30.12
+          rf_model: Cubes And Walled Offices
+          floor_number: 2
+      site_type: floor

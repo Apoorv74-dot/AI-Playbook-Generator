@@ -1,0 +1,24 @@
+---
+# Description: Create a new Area site
+# Modules Used: site_workflow_manager.py
+# Dependencies: None
+# Tags: Create Area, Area, New Area
+
+- name: Create a new area site
+  cisco.dnac.site_workflow_manager:
+    dnac_host: "{{dnac_host}}"
+    dnac_username: "{{dnac_username}}"
+    dnac_password: "{{dnac_password}}"
+    dnac_verify: "{{dnac_verify}}"
+    dnac_port: "{{dnac_port}}"
+    dnac_version: "{{dnac_version}}"
+    dnac_debug: "{{dnac_debug}}"
+    dnac_log_level: "{{dnac_log_level}}"
+    dnac_log: "{{dnac_log}}"
+    state: merged
+    config:
+    - site:
+        area:
+          name: Test
+          parent_name: Global/India
+      site_type: area

@@ -1,0 +1,25 @@
+---
+# Description: Delete a Building site
+# Modules Used: site_workflow_manager.py
+# Dependencies: None
+# Tags: Delete Building, Delete Building under area
+
+- name: Delete a Building under area
+  cisco.dnac.site_workflow_manager:
+    dnac_host: "{{dnac_host}}"
+    dnac_username: "{{dnac_username}}"
+    dnac_password: "{{dnac_password}}"
+    dnac_verify: "{{dnac_verify}}"
+    dnac_port: "{{dnac_port}}"
+    dnac_version: "{{dnac_version}}"
+    dnac_debug: "{{dnac_debug}}"
+    dnac_log_level: "{{dnac_log_level}}"
+    dnac_log: "{{dnac_log}}"
+    state: deleted
+    config:
+    - site:
+        building:
+          name: Mantri Square
+          parent_name: Global/India-Test/Bangalore
+      site_type: building
+
